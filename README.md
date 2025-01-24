@@ -1,76 +1,100 @@
-# **Nebis**
-### A system that transforms your data into power
-Nebis is more than a database; it's the future of data storage and management. Designed to be ultra-fast, scalable, and secure, Nebis uses the power of RAM with efficient disk persistence. Its modern design, combined with a universal HTTP-based API, makes it a solution that just works, no matter what language or platform you choose.
+# Nebis CLI
 
-## **Everything you need, when you need it.**
-With **Nebis**, boundaries disappear. Everything is designed so you can create without distractions.
+Nebis CLI is a command line tool for managing databases on the Nebis platform. It allows users to register, login, and perform operations such as creating, deleting, and getting database connection URLs.
 
-### **Performance that feels instant.**
-- **RAM speed:** Your data resides in memory for immediate access.
-- **Smart persistence:** Changes synchronized to disk using optimized JSON. Never lose data, never waste time.
+## Features
 
-> *"You feel like everything responds before you even think about it."*
+- User registration.
+- Secure login with hidden password.
+- Database management (create, list, and delete).
+- Getting the connection URL in a secure format.
 
----
+## Requirements
 
-### **Security without excuses.**
-- **AES-256 Encryption:** Military-grade protection for your data at rest and in transit.
-- **TLS/SSL:** Secure channels by default.
-- **JWT Authentication:** Only the right users access your data.
+- Python 3.6 or higher.
+- Required modules:
+- `requests`
+- `getpass`
 
-> *"Trust is not an option, it's the standard."*
+You can install the required modules with:
 
----
+```bash
+pip install requests
+```
 
-### **Automation at its finest.**
-- **Dynamic structures:** Tables? Columns? Nebis creates them for you. You decide what to store; we manage the rest.
-- **ACID Transactions:** Complete confidence that every operation is consistent and reliable.
-- **Automatic Cleanup:** Free yourself from managing unused structures; Nebis does it for you.
+## Installation
 
-> *"It's like the system read your mind and takes care of all the technical stuff."*
+1. Clone this repository:
 
----
+```bash
+git clone https://github.com/nebis-db/nebis-cli.git
+```
 
-## **Designed for developers. Built for the future.**
+2. Go to the project directory:
 
-### **Seamless Offline Sync.**
-Nebis doesn't stop when the network does. Your data is always available, and when the connection comes back, Nebis automatically syncs everything.
+```bash
+cd nebis-cli
+```
 
-> *"For a world where we're not always connected, but we're always creating."*
+3. Run the main script:
 
----
+```bash
+python cli.py
+```
 
-### **Effortless Scalability.**
-- **Sharding:** Break your data into more manageable pieces, with no extra effort.
-- **Replication:** High availability in every environment.
-- **High global performance:** From a local startup to a global enterprise network.
+## Usage
 
-> *"A system that grows with you and never leaves you behind."*
+Running the script will display an interactive menu:
 
----
+```bash
+--- Nebis CLI ---
+1. Register
+2. Login
+3. Exit
+Select an option:
+```
 
-### **Unrivaled universality.**
-- **Universal HTTP API:** No matter your language or platform, Nebis supports it.
-- **Frictionless integration:** From mobile apps to distributed systems and IoT hardware.
+### User Registration
 
-> *"Nebis works with everything. Literally."*
+Select option `1` and enter the required information:
 
----
+```
+Enter your username: johndoe
+Enter your password: ********
+Enter your email: johndoe@example.com
+```
 
-## **Who should use Nebis?**
+### Login
 
-### **Mobile Developers.**
-- **Unrivaled offline synchronization.** Your data, always available, even without a network.
+Select option `2` and enter your credentials (It is important to confirm your account, otherwise you will not be able to log in no matter how many times you try):
 
-### **Distributed Systems Engineers.**
-- **Sharding and replication:** The power you need for global projects.
+```
+Enter your username: johndoe
+Enter your password: ********
+```
 
-### **IoT specialists.**
-- **Ultra-lightweight efficiency:** Designed for resource-constrained devices.
+### User Menu
 
-### **Businesses and Startups.**
-- **Local performance, global impact.** Optimization that grows with you.
+After logging in, you will be able to perform the following actions:
 
----
+1. View associated databases.
+2. Create a new database.
+3. Delete a database.
+4. Get the Nebis URI.
+5. Log out.
 
-Nebis is designed so that developers of all levels, from beginners to experts, can take advantage of its power without a learning curve. It's minimalist, fast, and so intuitive it seems magical.
+### Get the connection URL
+
+To get the connection URL for a database, select the corresponding option and enter the password. The URL provided will be in the format:
+
+```bash
+nebis://username:password@nebisdb.pythonanywhere.com/database_name
+```
+
+## Contribution
+
+If you would like to contribute to Nebis CLI, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch with your changes.
+3. Submit a pull request for review.

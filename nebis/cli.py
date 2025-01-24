@@ -1,10 +1,11 @@
 import requests
+import getpass
 
 API_URL = "https://nebisdb.pythonanywhere.com"  
 
 def register_user():
     username = input("Enter your username: ")
-    password = input("Enter your password: ")
+    password = getpass.getpass("Enter your password: ")
     email = input("Enter your email: ")
 
     response = requests.post(f"{API_URL}/register", json={
@@ -24,7 +25,7 @@ def register_user():
 
 def login_user():
     username = input("Enter your username: ")
-    password = input("Enter your password: ")
+    password = getpass.getpass("Enter your password: ")
 
     response = requests.post(f"{API_URL}/login", json={
         "username": username,
@@ -127,7 +128,7 @@ def connect_to_database(username, password, database_name):
         return False
     
 def get_nebis_url(username, database_name):
-    password = input("Enter your password to connect to the database: ")
+    password = getpass.getpass("Enter your password to connect to the database: ")
     if not connect_to_database(username, password, database_name):
         print("Could not connect to the database. Make sure the database exists and the password is correct.")
         return

@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='nebis-cli',
-    version='1.0.0',
+    version='1.1.0',
     packages=find_packages(),
     install_requires=[
         'requests',  
@@ -12,9 +12,9 @@ setup(
             'nebis=nebis.cli:main', 
         ],
     },
-    author='Livrädo Sandoval',
-    author_email='livrasand@outlook.com',
-    description='A CLI tool for managing Nebis databases.',
+    author='NebisDB',
+    author_email='nebisdb@gmail.com',
+    description='Terminal client for Nebis Cloud, in-memory database with disk persistence.',
     url='https://github.com/livrasand/nebis-cli',  
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
